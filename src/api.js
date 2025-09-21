@@ -1,6 +1,6 @@
 // src/api.js
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-const ADMIN_KEY = import.meta.env.VITE_ADMIN_KEY || ""; // optional
+const ADMIN_KEY = import.meta.env.VITE_ADMIN_KEY || "";
 
 if (!window.__printedApiBase) {
   console.log("[API] Base URL:", API_URL);

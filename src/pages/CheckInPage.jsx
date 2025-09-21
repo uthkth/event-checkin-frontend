@@ -16,17 +16,17 @@ export default function CheckInPage() {
         };
     }, []);
 
-    // ===== state =====
+    // state
     const [recent, setRecent] = useState([]);
     const [status, setStatus] = useState("idle"); // idle | success | error
     const [message, setMessage] = useState("");
     const [refValue, setRefValue] = useState("");
 
-    // ===== guards =====
+    // guards
     const busy = useRef(false);
     const lastScan = useRef({ value: null, time: 0 });
 
-    // ===== data =====
+    // data
     async function loadRecent() {
         const all = await apiGet("/tickets");
         const list = (all || [])
@@ -37,7 +37,7 @@ export default function CheckInPage() {
     }
     useEffect(() => { loadRecent(); }, []);
 
-    // ===== helpers =====
+    // helpers
     function clearToast() { setStatus("idle"); setMessage(""); }
     function ok(msg) { setStatus("success"); setMessage(msg); }
     function err(msg) { setStatus("error"); setMessage(msg); if (navigator.vibrate) navigator.vibrate(150); }
