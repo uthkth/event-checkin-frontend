@@ -4,8 +4,8 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true, // serve on your LAN (and ngrok)
+    host: true,
     port: 5173,
-    allowedHosts: true, // allow ngrok subdomains
+    allowedHosts: true, // lets any ngrok subdomain in
   },
 });
